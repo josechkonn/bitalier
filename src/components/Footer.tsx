@@ -44,7 +44,10 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
           <p className="text-xs" style={{ color: 'rgba(255,255,255,0.2)', fontFamily: "'JetBrains Mono', monospace" }}>
-            © {new Date().getFullYear()} Bitalier. Todos los derechos reservados.
+            © {new Date().getFullYear()} Bitalier C.A. Todos los derechos reservados.
+          </p>
+          <p className="text-xs" style={{ color: 'rgba(255,255,255,0.15)', fontFamily: "'JetBrains Mono', monospace" }}>
+            RIF: J-40987654-2
           </p>
           <p className="text-xs" style={{ color: 'rgba(255,255,255,0.2)', fontFamily: "'JetBrains Mono', monospace" }}>
             Hecho <span style={{ color: `${LIME}60` }}>bit por bit</span> con dedicación artesanal.
