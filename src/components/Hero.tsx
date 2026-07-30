@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ChevronDown } from 'lucide-react'
+import { ArrowRight, ChevronDown, Facebook, Instagram } from 'lucide-react'
 import BinaryRain from './BinaryRain'
 import NoiseOverlay from './NoiseOverlay'
 import { LIME, DEEP, DARK, STATS } from '../constants'
@@ -121,6 +121,28 @@ export default function Hero() {
             >
               Ver servicios
             </Link>
+            <div className="flex items-center gap-2 ml-2 pl-2" style={{ borderLeft: '1px solid rgba(255,255,255,0.08)' }}>
+              <a
+                href="https://www.facebook.com/people/Bitalier/61592497686799/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 rounded transition-all duration-200 hover:scale-105 hover:text-white"
+                style={{ border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.4)' }}
+                aria-label="Facebook"
+              >
+                <Facebook size={15} />
+              </a>
+              <a
+                href="https://www.instagram.com/bitalierr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 rounded transition-all duration-200 hover:scale-105 hover:text-white"
+                style={{ border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.4)' }}
+                aria-label="Instagram"
+              >
+                <Instagram size={15} />
+              </a>
+            </div>
           </motion.div>
         </div>
       </motion.div>

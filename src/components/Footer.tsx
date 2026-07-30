@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Facebook, Instagram } from 'lucide-react'
 import { LIME, DARK } from '../constants'
 import logoSrc from '../assets/LogoFooter.webp'
 
@@ -43,6 +44,28 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://www.facebook.com/people/Bitalier/61592497686799/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-9 h-9 rounded transition-all duration-200 hover:scale-105 hover:text-white"
+              style={{ border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.3)' }}
+              aria-label="Facebook"
+            >
+              <Facebook size={14} />
+            </a>
+            <a
+              href="https://www.instagram.com/bitalierr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-9 h-9 rounded transition-all duration-200 hover:scale-105 hover:text-white"
+              style={{ border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.3)' }}
+              aria-label="Instagram"
+            >
+              <Instagram size={14} />
+            </a>
+          </div>
           <p className="text-xs" style={{ color: 'rgba(255,255,255,0.2)', fontFamily: "'JetBrains Mono', monospace" }}>
             © {new Date().getFullYear()} Bitalier C.A. Todos los derechos reservados.
           </p>
