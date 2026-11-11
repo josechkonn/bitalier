@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# Bitalier
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio web de **Bitalier**, una agencia de tecnología y marketing digital: desarrollo de software, marketing, diseño UX/UI, estrategia digital, SEO/SEM y branding.
 
-Currently, two official plugins are available:
+Hecho con **React 19 + TypeScript + Vite + Tailwind CSS v4**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Páginas
 
-## React Compiler
+| Ruta | Contenido |
+|---|---|
+| `/` | Inicio: hero con lluvia binaria animada, concepto, servicios, misión y visión, llamada a la acción |
+| `/servicios` | Detalle de los seis servicios |
+| `/nosotros` | Quiénes somos, misión y visión |
+| `/contacto` | Llamada a contactar |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Incluye enlaces a Facebook e Instagram y Google Tag Manager para la analítica.
 
-## Expanding the ESLint configuration
+## Puesta en marcha
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Requiere Node.js 20 o posterior.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev       # servidor de desarrollo
+npm run build     # compila a dist/
+npm run preview   # sirve la compilación
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Organigrama en PDF
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+`scripts/generar-pdf.js` dibuja con jsPDF el organigrama jerárquico de la empresa, siguiendo el modelo *stream-aligned* de Team Topologies. Se hizo como tarea académica.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+node scripts/generar-pdf.js   # genera bitalier-organigrama.pdf
 ```
+
+## Estructura
+
+```
+src/
+├── pages/        # Home, ServicesPage, AboutPage, ContactPage
+├── components/   # Navbar, Hero, BinaryRain, ServicesSection, ConceptSection,
+│                 # MissionVisionSection, CTASection, Footer, NoiseOverlay
+├── constants.ts  # Servicios, estadísticas y colores de marca
+├── styles/       # Tema, fuentes y Tailwind
+└── assets/       # Logos
+scripts/
+└── generar-pdf.js
+```
+
+### Colores de marca
+
+| Nombre | Hex |
+|---|---|
+| Lima | `#A5F000` |
+| Azul profundo | `#03045E` |
+| Oscuro | `#0A0C10` |
